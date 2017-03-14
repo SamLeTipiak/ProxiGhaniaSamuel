@@ -1,7 +1,8 @@
 package presentation;
 
 import java.io.IOException;
-import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,20 +12,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import metier.Adviser;
-import service.ServiceActor;
+import metier.Client;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class AccountServlet
  */
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/AccountServlet")
+public class AccountListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Default constructor.
+	 * @see HttpServlet#HttpServlet()
 	 */
-	public LoginServlet() {
+	public AccountListServlet() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -37,36 +38,14 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at:
 		// ").append(request.getContextPath());
-		
-		String login = request.getParameter("id");
-		String pwd = request.getParameter("pwd");
-		
-		 Long log = Long.valueOf(login);
 
-		try {
-			Adviser adv =  ServiceActor.getAdviserByIdAdviser(log);
-			
-			RequestDispatcher dispatcher = null;
-			if (log == adv.getIdAdviser() && pwd.equalsIgnoreCase(adv.getPwdAdviser())) {
+		/*Collection<Client> clientList = new ArrayList<>();
 
-				HttpSession session = request.getSession();
-				session.setMaxInactiveInterval(20 * 60);
-				session.setAttribute("adv", adv);
-				dispatcher = request.getRequestDispatcher("/WEB-INF/results/loginSuccess.jsp");
-
-			}
-
-			else {
-				dispatcher = request.getRequestDispatcher("/loginError.html");
-			}
-			dispatcher.forward(request, response);
-		
-		
-		
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		HttpSession session = request.getSession();
+		session.setAttribute("ClientAccountList", clientAccountList);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/clientAccountList.jsp");
+		dispatcher.forward(request, response);
+		*/
 		
 	}
 

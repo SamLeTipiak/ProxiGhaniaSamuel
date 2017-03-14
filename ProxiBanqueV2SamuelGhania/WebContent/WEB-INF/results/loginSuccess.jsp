@@ -7,9 +7,9 @@
 <title>Bienvenue</title>
 </head>
 <body>
-<p>Bonjour untel!</p>
+<p>Bonjour ${ }!</p>
 
-<p>Pour afficher la liste de clients, c'est par<a href="ListServlet"> ici</a></p>
+<p>Pour afficher la liste de clients, c'est par<a href="ClientListServlet"> ici</a></p>
 
 </body>
 </html>

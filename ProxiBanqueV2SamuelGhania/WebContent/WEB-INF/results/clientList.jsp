@@ -1,64 +1,61 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="C:/Users/adminl/Desktop/ProxiSamuel/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 <title>Liste clients</title>
 </head>
 <body>
-<h1>Liste clients :</h1>
+	<h1>Liste clients :</h1>
 
-<p>A partir de cette liste vous pourrez modifier les informations d'un client et effectuer des virements entre autres.</p>
-
-<table>
-<tr>
-<th>Id Client</th>
-
-<th>Nom</th>
-
-<th>Prénom</th>
-
-<th>Conseiller attitré</th>
-
-<th>Adresse</th>
-
-<th>Code Postal</th>
-
-<th>Ville</th>
-
-<th>Téléphone</th>
-
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><input type="submit" value="Modifier"/></td>
+	<p>A partir de cette liste vous pourrez modifier les informations
+		d'un client et effectuer des virements entre autres.</p>
 
 
-</tr>
+	<table>
 
-<tr>
+		<tr class="row">
+			<th class="col-md-1">Id Client</th>
 
-<td><input type="submit" value="Modifier"/></td>
-</tr>
+			<th class="col-md-1">Nom</th>
 
-<tr>
+			<th class="col-md-1">Prénom</th>
 
-<td><input type="submit" value="Modifier"/></td>
-</tr>
+			<th class="col-md-1">Conseiller attitré</th>
 
-<tr></tr>
+			<th class="col-md-1">Adresse</th>
 
-<tr></tr>
-</table>
+			<th class="col-md-1">Code Postal</th>
+
+			<th class="col-md-1">Ville</th>
+
+			<th class="col-md-1">Téléphone</th>
+			<th class="col-md-4"></th>
+
+		</tr>
+		<c:forEach items="${ClientList}" var="Client">
+			<tr class="row">
+				<td class="col-md-1">${Client.idClient}</td>
+				<td class="col-md-1">${Client.lastName}</td>
+				<td class="col-md-1">${Client.firstName}</td>
+				<td class="col-md-1">${Client.idAdviser}</td>
+				<td class="col-md-1">${Client.address}</td>
+				<td class="col-md-1">${Client.zipCode}</td>
+				<td class="col-md-1">${Client.town}</td>
+				<td class="col-md-1">${Client.telNumber}</td>
+
+				<td class="col-md-2"><input type="submit" value="Modifier" /></td>
+				<td class="col-md-2"><input type="submit" value="Comptes" /></td>
+
+
+			</tr>
+
+
+		</c:forEach>
+	</table>
 
 </body>
 </html>

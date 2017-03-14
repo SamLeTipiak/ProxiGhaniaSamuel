@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>Connexion</title>
 </head>
 <body>
+
+	<form action="LoginServlet" method="post">
+		<fieldset>
+			<legend>Connectez-vous : </legend>
+
+
+<p>*Attention, l'identifiant et/ou le mot de passe ne sont pas corrects.<br/>Veuillez saisir de nouveau vos informations.</p>
+			<label for="id">Identifiant : </label> <input type="text" id="id"
+				name="id" placeholder="Votre identifiant"/><br/> <label for="pwd">Mot de passe : </label> <input
+				type="text" id="pwd" name="pwd" placeholder="Votre mot de passe"/><br/> <input type="submit" value="Valider" />
+
+		</fieldset>
+
+	</form>
 
 </body>
 </html>

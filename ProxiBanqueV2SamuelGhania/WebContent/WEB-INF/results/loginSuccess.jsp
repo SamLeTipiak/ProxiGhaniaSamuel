@@ -9,7 +9,7 @@
 <body>
 <p>Bonjour untel!</p>
 
-<p>Pour afficher la liste de clients, c'est par<a href="/WEB-INF/results/clientList.jsp">ici</a></p>
+<p>Pour afficher la liste de clients, c'est par<a href="ListServlet"> ici</a></p>
 
 </body>
 </html>

@@ -80,15 +80,15 @@ public class DAO implements IDAO {
 	}
 
 	// Ajouter client, conseiller,agence.
-	@Override
-	public void addClient(Client cl) {
-		mapOfClient.put(cl.getId(), cl);
-	}
+//	@Override
+//	public void addClient(Client cl) {
+//		mapOfClient.put(cl.getId(), cl);
+//	}
 
-	@Override
-	public void addAdviser(Adviser ad) {
-		mapOfAdviser.put(ad.getId(), ad);
-	}
+//	@Override
+//	public void addAdviser(Adviser ad) {
+//		mapOfAdviser.put(ad.getId(), ad);
+//	}
 
 	@Override
 	public void addAgence(Agence ag) {
@@ -96,15 +96,15 @@ public class DAO implements IDAO {
 	}
 
 	// Enlever Client,conseiller, agence.
-	@Override
-	public void removeClient(Client cl) {
-		mapOfClient.remove(cl.getId());
-	}
+//	@Override
+//	public void removeClient(Client cl) {
+//		mapOfClient.remove(cl.getId());
+//	}
 
-	@Override
-	public void removeAdviser(Adviser ad) {
-		mapOfAdviser.remove(ad.getId());
-	}
+//	@Override
+//	public void removeAdviser(Adviser ad) {
+//		mapOfAdviser.remove(ad.getId());
+//	}
 
 	@Override
 	public void removeAgence(Agence ag) {

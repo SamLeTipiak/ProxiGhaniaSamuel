@@ -2,11 +2,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Connection</title>
+<title>Connexion</title>
 </head>
 <body>
 
-<form action=""></form>
+	<form action="LoginServlet" method="post">
+		<fieldset>
+			<legend>Connectez-vous : </legend>
+
+			<label for="id">Identifiant : </label> <input type="text" id="id"
+				name="id" placeholder="Votre identifiant"/><br/> <label for="pwd">Mot de passe : </label> <input
+				type="text" id="pwd" name="pwd" placeholder="Votre mot de passe"/><br/> <input type="submit" value="Valider" />
+
+		</fieldset>
+
+	</form>
 
 </body>
 </html>

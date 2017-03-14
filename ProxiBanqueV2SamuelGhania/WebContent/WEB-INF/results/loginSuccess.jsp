@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Liste clients</title>
+<title>Bienvenue</title>
 </head>
 <body>
-<h1>Liste clients :</h1>
+<p>Bonjour untel!</p>
 
-<p>A partir de cette liste vous pourrez modifiere les informations d'un client et effectuer des virements entre autres.</p>
+<p>Pour afficher la liste de clients, c'est par<a href="/WEB-INF/results/clientList.jsp">ici</a></p>
 
 </body>
 </html>

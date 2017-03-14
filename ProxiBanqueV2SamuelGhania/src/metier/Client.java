@@ -4,7 +4,6 @@ package metier;
 import java.util.ArrayList;
 import java.util.List;
 
-import service.ActorService;
 
 public class Client extends Actor {
 
@@ -13,10 +12,10 @@ public class Client extends Actor {
 	private String address;
 	private String zipCode;
 	private String town;
+	private String telNumber;
 
 	private List<BankAccount> listOfAccount = new ArrayList<>();
-	private boolean clientIsRich;
-	private BankCard currentCard;
+
 
 	protected double overdraftRate;
 	
@@ -26,17 +25,13 @@ public class Client extends Actor {
 	}
 	protected etype type;
 
-	public Client(long id, String idAgence, String lastName, String firstName, long cellphone, String adress,
+	public Client(long idClient, String idAgence, String lastName, String firstName, String telNumber, String adress,
 			String zipCode, String town) {
-		super(id, idAgence, lastName, firstName, cellphone);
+		super(idAgence, lastName, firstName);
 		this.address = adress;
 		this.zipCode = zipCode;
 		this.town = town;
-		ActorService.addNewClient(this);
-	}
-
-	public Client(String idAgence, String lastName) {
-		this(ActorService.genIdClient(), idAgence, lastName, "", 0, "", "", "");
+		this.telNumber = telNumber;
 	}
 
 	public long getIdAviser() {
@@ -59,25 +54,25 @@ public class Client extends Actor {
 		return listOfAccount;
 	}
 
-	public void addBankAccount(BankAccount ba) {
-		this.listOfAccount.add(ba);
-	}
+//	public void addBankAccount(BankAccount ba) {
+//		this.listOfAccount.add(ba);
+//	}
 
-	public void AddBankCard(BankCard bc) {
-		this.currentCard = bc;
-	}
-
-	public void removeBankAccount(BankAccount ba) {
-		this.listOfAccount.remove(ba);
-	}
-
-	public boolean isClientIsRich() {
-		return clientIsRich;
-	}
-
-	public BankCard getCurrentCard() {
-		return currentCard;
-	}
+//	public void AddBankCard(BankCard bc) {
+//		this.currentCard = bc;
+//	}
+//
+//	public void removeBankAccount(BankAccount ba) {
+//		this.listOfAccount.remove(ba);
+//	}
+//
+//	public boolean isClientIsRich() {
+//		return clientIsRich;
+//	}
+//
+//	public BankCard getCurrentCard() {
+//		return currentCard;
+//	}
 
 	public void setIdAviser(long idAviser) {
 		this.idAviser = idAviser;
@@ -103,9 +98,6 @@ public class Client extends Actor {
 		this.type = type;
 	}
 
-	public void setClientIsRich(boolean clientIsRich) {
-		this.clientIsRich = clientIsRich;
-	}
 
 	public double getOverdraftRate() {
 		return overdraftRate;
@@ -115,25 +107,44 @@ public class Client extends Actor {
 		this.overdraftRate = overdraftRate;
 	}
 
-	public BankAccount getAccount(BankAccount.etype type) {
-
-		if (this.listOfAccount.size() > 0) {
-
-			for (BankAccount bankAccount : this.listOfAccount) {
-				if (bankAccount.getType().equals(type)) {
-					//System.out.println("Client getAccount by type : "+type+" = "+bankAccount);
-					return  bankAccount;
-				}
-			}
-		}
-		return null;
-	}
+//	public BankAccount getAccount(BankAccount.etype type) {
+//
+//		if (this.listOfAccount.size() > 0) {
+//
+//			for (BankAccount bankAccount : this.listOfAccount) {
+//				if (bankAccount.getType().equals(type)) {
+//					//System.out.println("Client getAccount by type : "+type+" = "+bankAccount);
+//					return  bankAccount;
+//				}
+//			}
+//		}
+//		return null;
+//	}
 
 	@Override
 	public String toString() {
 		return "Client [idAviser=" + idAviser + ", address=" + address + ", zipCode=" + zipCode + ", town=" + town
-				+ ", listOfAccount=" + listOfAccount + ", clientIsRich=" + clientIsRich + ", currentCard=" + currentCard
-				+ ", overdraftRate=" + overdraftRate + "]";
+				+ ", listOfAccount=" + listOfAccount + ", overdraftRate=" + overdraftRate + "]";
+	}
+
+	public long getIdClient() {
+		return idClient;
+	}
+
+	public void setIdClient(long idClient) {
+		this.idClient = idClient;
+	}
+
+	public String getTelNumber() {
+		return telNumber;
+	}
+
+	public void setTelNumber(String telNumber) {
+		this.telNumber = telNumber;
+	}
+
+	public void setListOfAccount(List<BankAccount> listOfAccount) {
+		this.listOfAccount = listOfAccount;
 	}
 
 }

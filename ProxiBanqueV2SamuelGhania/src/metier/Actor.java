@@ -13,11 +13,10 @@ public class Actor {
 		this.idAgence = adAgence;
 		this.lastName = lastName;
 		this.firstName = firstName;
-		this.cellphone = cellphone;
 	}
 
 	
-	public Actor(String idAgence, String lastName) {
+	public Actor(String idAgence, String lastName,String firstname) {
 		
 	}
 

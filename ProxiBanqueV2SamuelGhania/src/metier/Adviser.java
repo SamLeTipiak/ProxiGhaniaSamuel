@@ -4,8 +4,6 @@ package metier;
 import java.util.ArrayList;
 import java.util.List;
 
-import service.ActorService;
-
 
 public class Adviser extends Actor{
 
@@ -15,22 +13,12 @@ public class Adviser extends Actor{
 	
 	public static final int MAXCLIENT = 10;
 	
-	public Adviser(long idAviser, String idAgence, String lastName, String firstName, long cellphone) {
-		super(idAgence, lastName, firstName, cellphone);
+	public Adviser(long idAviser, String idAgence, String lastName, String firstName) {
+		super(idAgence, lastName, firstName);
 		// ActorService.addAdviserToBDD(this);
 		
 	}
-	public Adviser(String idAgence, String lastName, long cellphone)
-	{
-		this(ActorService.genIdAdviser(), idAgence, lastName, "", cellphone);
-	}
 	
-
-	public Adviser(String idAgence, String lastName)
-	{
-		
-		this(ActorService.genIdAdviser(), idAgence, lastName, "", 0);
-	}
 	
 	public Adviser () {
 		super();

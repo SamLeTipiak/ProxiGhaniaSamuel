@@ -6,7 +6,7 @@ import metier.*;
 
 public interface IDAO {
 	
-	public Adviser getAdviserDispo();
+//	public Adviser getAdviserDispo();
 	public long genIdAgence();
 	public long genIdClient();
 	public long genIdAdviser();

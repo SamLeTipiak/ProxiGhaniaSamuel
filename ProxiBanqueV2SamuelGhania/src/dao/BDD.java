@@ -1,7 +1,5 @@
 package dao;
 
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -12,7 +10,7 @@ public class BDD {
         Connection cnx = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            cnx = DriverManager.getConnection("jdbc:MySQL://localhost/ProxiBanque", "root", "");
+            cnx = DriverManager.getConnection("jdbc:MySQL://localhost/proxibanque", "root", "");
 
         } catch (Exception e) {
             System.out.println(e.getMessage());

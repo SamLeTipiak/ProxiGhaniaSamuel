@@ -135,17 +135,17 @@ public class ActorService extends SService {
 	 * @return Retourne un texte présentant les informations importantes du
 	 *         conseiller
 	 */
-	public static String getAllAdvier() {
-		DAO daotmp = DAO.getInstance();
-		String ret = "";
-		Collection<Adviser> tmp = daotmp.getMapOfAdviser();
-		for (Adviser adviser : tmp) {
-			ret += " Conseiller : " + adviser.getLastName() + " " + adviser.getFirstName() + " | de l'agence"
-					+ adviser.getIdAgence() + " | son numéro est le : " + adviser.getCellphone()
-					+ " | Nombre de client :" + adviser.getListOfClient().size() + "\n";
-		}
-		return ret;
-	}
+//	public static String getAllAdvier() {
+//		DAO daotmp = DAO.getInstance();
+//		String ret = "";
+//		Collection<Adviser> tmp = daotmp.getMapOfAdviser();
+//		for (Adviser adviser : tmp) {
+//			ret += " Conseiller : " + adviser.getLastName() + " " + adviser.getFirstName() + " | de l'agence"
+//					+ adviser.getIdAgence() + " | son numéro est le : " + adviser.getCellphone()
+//					+ " | Nombre de client :" + adviser.getListOfClient().size() + "\n";
+//		}
+//		return ret;
+//	}
 
 	/**
 	 * 

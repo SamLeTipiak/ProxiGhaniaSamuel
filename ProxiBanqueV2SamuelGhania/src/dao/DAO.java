@@ -50,17 +50,17 @@ public class DAO implements IDAO {
 
 	// Méthode qui retourne un conseiller qui
 	// n'a pas sa liste de client pleine
-	@Override
-	public Adviser getAdviserDispo() {
-		Collection<Adviser> listAdviser = new ArrayList<>();
-		listAdviser = mapOfAdviser.values();
-		for (Iterator<Adviser> iterator = listAdviser.iterator(); iterator.hasNext();) {
-			Adviser ad = iterator.next();
-			if (ad.isAviableToNewClient())
-				return ad;
-		}
-		return null;
-	}
+//	@Override
+//	public Adviser getAdviserDispo() {
+//		Collection<Adviser> listAdviser = new ArrayList<>();
+//		listAdviser = mapOfAdviser.values();
+//		for (Iterator<Adviser> iterator = listAdviser.iterator(); iterator.hasNext();) {
+//			Adviser ad = iterator.next();
+//			if (ad.isAviableToNewClient())
+//				return ad;
+//		}
+//		return null;
+//	}
 
 	// Retourne un identifiant (en vérifiant qu'il est nouveau
 

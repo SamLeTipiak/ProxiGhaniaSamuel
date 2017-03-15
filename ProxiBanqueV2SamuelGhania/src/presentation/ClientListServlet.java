@@ -47,6 +47,7 @@ public class ClientListServlet extends HttpServlet {
 		clientList = ServiceActor.getAllClient();
 		List<Client> cl = (List<Client>) clientList; 
 		System.out.println(cl.get(1).getIdClient());
+		
 		HttpSession session = request.getSession(false);
 		session.setAttribute("ClientList", clientList);
 		

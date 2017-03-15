@@ -27,4 +27,4 @@ Démarrage
 
 Afin de lancer l'application, il suffit de saisir dans votre navigateur l'url suivante :
 
-http://localhost:8080/ProxiBanque
+http://localhost:8080/ProxiBanque 

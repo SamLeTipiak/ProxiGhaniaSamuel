@@ -1,7 +1,6 @@
 package presentation;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -37,37 +36,28 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at:
 		// ").append(request.getContextPath());
-		
+
 		String login = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
-		
-		 Long log = Long.valueOf(login);
 
-		try {
-			Adviser adv =  ServiceActor.getAdviserByIdAdviser(log);
-			
-			RequestDispatcher dispatcher = null;
-			if (log == adv.getIdAdviser() && pwd.equalsIgnoreCase(adv.getPwdAdviser())) {
+		Long log = Long.valueOf(login);
+		Adviser adv = ServiceActor.getAdviserByIdAdviser(log);
 
-				HttpSession session = request.getSession();
-				session.setMaxInactiveInterval(20 * 60);
-				session.setAttribute("adv", adv);
-				dispatcher = request.getRequestDispatcher("/WEB-INF/results/loginSuccess.jsp");
+		RequestDispatcher dispatcher = null;
+		if (log == adv.getIdAdviser() && pwd.equalsIgnoreCase(adv.getPwdAdviser())) {
 
-			}
+			HttpSession session = request.getSession();
+			session.setMaxInactiveInterval(20 * 60);
+			session.setAttribute("adv", adv);
+			dispatcher = request.getRequestDispatcher("/WEB-INF/results/loginSuccess.jsp");
 
-			else {
-				dispatcher = request.getRequestDispatcher("/loginError.html");
-			}
-			dispatcher.forward(request, response);
-		
-		
-		
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
-		
+
+		else {
+			dispatcher = request.getRequestDispatcher("/loginError.html");
+		}
+		dispatcher.forward(request, response);
+
 	}
 
 	/**

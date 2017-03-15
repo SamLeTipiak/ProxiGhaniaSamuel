@@ -1,14 +1,29 @@
 package metier;
 
 
+/**
+ * @author Samuel Bouchet - Ghania Bouzemame
+ * @version 2.0
+ * 
+ * <b>Actor est la classe représentant tous les acteurs au sein de la banque.</b>
+ * 
+ * <div>Chaque acteur est représenté par les propriétés suivantes :
+ * <ul>
+ * <li>idAgence, l'identifiant de l'agence à laquelle il est rattaché</li>
+ * <li>lastName, son nom de famille</li>
+ * <li>firstName son prénom</li>
+ * </ul>
+ * </div>
+ * 
+ *
+ */
 public class Actor {
 	
 	private String idAgence;
 	private String lastName;
 	private String firstName;
-	private long cellphone;
 
-	public Actor(String adAgence, String lastName, String firstName, long cellphone) {
+	public Actor(String adAgence, String lastName, String firstName) {
 		
 		this.idAgence = adAgence;
 		this.lastName = lastName;
@@ -16,9 +31,6 @@ public class Actor {
 	}
 
 	
-	public Actor(String idAgence, String lastName,String firstname) {
-		
-	}
 
 	public Actor() {
 		
@@ -48,12 +60,5 @@ public class Actor {
 		this.firstName = firstName;
 	}
 
-	public long getCellphone() {
-		return cellphone;
-	}
-
-	public void setCellphone(long cellphone) {
-		this.cellphone = cellphone;
-	}
 
 }

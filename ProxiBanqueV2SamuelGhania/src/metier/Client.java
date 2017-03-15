@@ -1,14 +1,34 @@
 package metier;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * @author Samuel Bouchet - Ghania Bouzemame
+ * @version 2.0
+ *
+ *          <b>Client est la classe représentant les clients de la banque, elle
+ *          étend la classe Actor et hérite donc de ses propriétés et méthodes.</b>
+ *
+ * @see Actor
+ *
+ *      <div>Chaque client est représenté par les propriétés spécifiques suivantes :
+ *      <ul>
+ *      <li>idClient, l'identifiant du client au sein de la banque</li>
+ *      <li>idAdviser, l'identifiant du conseiller auquel il est rattaché</li>
+ *      <li>address, l'adresse physique du client</li>
+ *      <li>zipCode, son code postal</li>
+ *      <li>town, sa ville</li>
+ *      <li>telNumber, son numéro de téléphone</li>
+ *      </ul>
+ *      </div>
+ *
+ *
+ */
 public class Client extends Actor {
 
 	private long idClient;
-	private long idAviser;
+	private long idAdviser;
 	private String address;
 	private String zipCode;
 	private String town;
@@ -16,27 +36,26 @@ public class Client extends Actor {
 
 	private List<BankAccount> listOfAccount = new ArrayList<>();
 
-
 	protected double overdraftRate;
-	
-	
-	public enum etype{
-		CASUAL,ENTERPRISE;
+
+	public enum etype {
+		CASUAL, ENTERPRISE;
 	}
+
 	protected etype type;
 
-	public Client(long idClient, String idAgence,long idAviser , String lastName, String firstName, String telNumber, String adress,
-			String zipCode, String town) {
+	public Client(long idClient, String idAgence, long idAviser, String lastName, String firstName, String telNumber,
+			String adress, String zipCode, String town) {
 		super(idAgence, lastName, firstName);
-		this.idAviser = idAviser;
+		this.idAdviser = idAviser;
 		this.address = adress;
 		this.zipCode = zipCode;
 		this.town = town;
 		this.telNumber = telNumber;
 	}
 
-	public long getIdAviser() {
-		return idAviser;
+	public long getIdAdviser() {
+		return idAdviser;
 	}
 
 	public String getAddress() {
@@ -55,28 +74,28 @@ public class Client extends Actor {
 		return listOfAccount;
 	}
 
-//	public void addBankAccount(BankAccount ba) {
-//		this.listOfAccount.add(ba);
-//	}
+	// public void addBankAccount(BankAccount ba) {
+	// this.listOfAccount.add(ba);
+	// }
 
-//	public void AddBankCard(BankCard bc) {
-//		this.currentCard = bc;
-//	}
-//
-//	public void removeBankAccount(BankAccount ba) {
-//		this.listOfAccount.remove(ba);
-//	}
-//
-//	public boolean isClientIsRich() {
-//		return clientIsRich;
-//	}
-//
-//	public BankCard getCurrentCard() {
-//		return currentCard;
-//	}
+	// public void AddBankCard(BankCard bc) {
+	// this.currentCard = bc;
+	// }
+	//
+	// public void removeBankAccount(BankAccount ba) {
+	// this.listOfAccount.remove(ba);
+	// }
+	//
+	// public boolean isClientIsRich() {
+	// return clientIsRich;
+	// }
+	//
+	// public BankCard getCurrentCard() {
+	// return currentCard;
+	// }
 
-	public void setIdAviser(long idAviser) {
-		this.idAviser = idAviser;
+	public void setIdAdviser(long idAviser) {
+		this.idAdviser = idAviser;
 	}
 
 	public void setAddress(String address) {
@@ -90,7 +109,7 @@ public class Client extends Actor {
 	public void setTown(String town) {
 		this.town = town;
 	}
-	
+
 	public etype getType() {
 		return type;
 	}
@@ -98,7 +117,6 @@ public class Client extends Actor {
 	public void setType(etype type) {
 		this.type = type;
 	}
-
 
 	public double getOverdraftRate() {
 		return overdraftRate;
@@ -108,23 +126,24 @@ public class Client extends Actor {
 		this.overdraftRate = overdraftRate;
 	}
 
-//	public BankAccount getAccount(BankAccount.etype type) {
-//
-//		if (this.listOfAccount.size() > 0) {
-//
-//			for (BankAccount bankAccount : this.listOfAccount) {
-//				if (bankAccount.getType().equals(type)) {
-//					//System.out.println("Client getAccount by type : "+type+" = "+bankAccount);
-//					return  bankAccount;
-//				}
-//			}
-//		}
-//		return null;
-//	}
+	// public BankAccount getAccount(BankAccount.etype type) {
+	//
+	// if (this.listOfAccount.size() > 0) {
+	//
+	// for (BankAccount bankAccount : this.listOfAccount) {
+	// if (bankAccount.getType().equals(type)) {
+	// //System.out.println("Client getAccount by type : "+type+" =
+	// "+bankAccount);
+	// return bankAccount;
+	// }
+	// }
+	// }
+	// return null;
+	// }
 
 	@Override
 	public String toString() {
-		return "Client [idAviser=" + idAviser + ", address=" + address + ", zipCode=" + zipCode + ", town=" + town
+		return "Client [idAdviser=" + idAdviser + ", address=" + address + ", zipCode=" + zipCode + ", town=" + town
 				+ ", listOfAccount=" + listOfAccount + ", overdraftRate=" + overdraftRate + "]";
 	}
 

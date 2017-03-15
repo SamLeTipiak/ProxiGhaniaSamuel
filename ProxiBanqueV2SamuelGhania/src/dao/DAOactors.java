@@ -16,15 +16,12 @@ public class DAOactors implements IDAOactors {
 
 		Connection cnx = BDD.seConnecter();
 
-		Statement stat;
+		
 		try {
-			stat = cnx.createStatement();
+			Statement stat = cnx.createStatement();
 
 			String sql = "select * from adviser";
-
-			ResultSet res;
-
-			res = stat.executeQuery(sql);
+			ResultSet res = stat.executeQuery(sql);
 
 			while (res.next()) {
 				long idadv = res.getInt("idadviser");
@@ -56,10 +53,7 @@ public class DAOactors implements IDAOactors {
 		Statement stat;
 		try {
 			stat = cnx.createStatement();
-			String sql = "select idclient, adviser.idadviser, idagence, client.firstname,  client.lastname, address, zipcode, town, telnumber "
-					+ " from client, adviser"
-					+"where adviser.idadviser = client.idadviser"
-					+"group by idclient";
+			String sql = "select idclient, adviser.idadviser, idagence, client.firstname,  client.lastname, address, zipcode, town, telnumber from client, adviser where adviser.idadviser = client.idadviser group by idclient";
 
 
 			ResultSet res = stat.executeQuery(sql);
@@ -69,23 +63,25 @@ public class DAOactors implements IDAOactors {
 				long idadv = res.getInt("idadviser");
 				String firstn = res.getString("firstname");
 				String lastn = res.getString("lastname");
-				String adr = res.getString("adress");
+				String adr = res.getString("address");
 				String cp = res.getString("zipcode");
 				String town = res.getString("town");
 				String pn = res.getString("telnumber");
 
 				Client cli = new Client(idcl, idag, idadv, firstn, lastn, adr, cp, town, pn);
 				listClient.add(cli);
+				
 			}
+			return listClient;
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			return null;
+			return listClient;
 		} finally {
 			BDD.seDeconnecter(cnx);
 		}
 
-		return null;
+
 	}
 
 }

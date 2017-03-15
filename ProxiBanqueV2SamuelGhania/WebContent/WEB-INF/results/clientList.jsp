@@ -14,7 +14,6 @@
 	<p>A partir de cette liste vous pourrez modifier les informations
 		d'un client et effectuer des virements entre autres.</p>
 
-
 	<table>
 
 		<tr class="row">
@@ -31,11 +30,12 @@
 			<th class="col-md-1">Code Postal</th>
 
 			<th class="col-md-1">Ville</th>
-
+                                  
 			<th class="col-md-1">Téléphone</th>
-			<th class="col-md-4"></th>
+			<th class="col-md-4">Action</th>
 
 		</tr>
+		
 		<c:forEach items="${ClientList}" var="Client">
 			<tr class="row">
 				<td class="col-md-1">${Client.idClient}</td>

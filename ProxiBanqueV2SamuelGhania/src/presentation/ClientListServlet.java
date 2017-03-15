@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.connector.Request;
 
 import metier.*;
+import service.ServiceActor;
 
 /**
  * Servlet implementation class ListServlet
@@ -43,13 +43,16 @@ public class ClientListServlet extends HttpServlet {
 		// ").append(request.getContextPath());
 
 		Collection<Client> clientList = new ArrayList<>();
+		clientList = ServiceActor.getAllClient();
 
 		
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(false);
 		session.setAttribute("ClientList", clientList);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/clientList.jsp");
+		
+	
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/results/clientList.jsp");
 		dispatcher.forward(request, response);
-
 	}
 
 	/**

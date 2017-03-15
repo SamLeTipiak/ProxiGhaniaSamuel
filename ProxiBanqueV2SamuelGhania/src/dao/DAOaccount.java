@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import metier.AccountCurrent;
@@ -118,7 +119,7 @@ public class DAOaccount implements IDAOaccount {
 	
 	public static Collection<Long> getAllIdAccount() {
 
-		Collection<Long> listId;
+		Collection<Long> listId = new ArrayList<>();
 
 		Connection cnx = BDD.seConnecter();
 
@@ -126,20 +127,14 @@ public class DAOaccount implements IDAOaccount {
 		try {
 			stat = cnx.createStatement();
 
-			String sql = "select idcurrentaccount, idsavingaccount from currentaccount,savingaccount";
+			String sql = "select idcurrentaccountfrom currentaccount";
 
 			ResultSet res;
 
 			res = stat.executeQuery(sql);
 
 			while (res.next()) {
-				long idcl = res.getInt("idclient");
 				long idca = res.getInt("idcurrentaccount");
-				double so = res.getFloat("sold");
-				String date = res.getString("opendate");
-				long cn = res.getInt("cardnumber");
-
-				sc = new AccountSaving(idcl, idca, so, date);
 
 			}
 

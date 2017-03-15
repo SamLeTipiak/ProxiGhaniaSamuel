@@ -22,6 +22,7 @@
 
 				<th>Numéro de compte</th>
 				<th>Solde</th>
+				<th>Date d'ouverture</th>
 				<th>Carte associée</th>
 			</tr>
 			<tr>
@@ -29,6 +30,8 @@
 				<td>${ca.numAccount}</td>
 
 				<td>${ca.sold}</td>
+				
+				<td>${ca.openDate}</td>
 
 				<td>${Card.type }</td>
 				
@@ -42,6 +45,7 @@
 			<tr>
 
 				<th>Numéro de compte</th>
+				<th>Date d'ouverture</th>
 				<th>Solde</th>
 			</tr>
 
@@ -50,6 +54,8 @@
 				<td>${sa.numAccount}</td>
 
 				<td>${sa.sold}</td>
+				
+				<td>${sa.openDate}</td>
 
 			</tr>
 

@@ -10,12 +10,21 @@ import metier.Client;
 public class ServiceActor {
 	
 	public static Adviser getAdviserByIdAdviser(Long idAdviser){
+		if (idAdviser instanceof Long){
 		return DAOactors.getAdviserById(idAdviser) ;
+		}else {
+			return new Adviser();
+		}
+		
 	
 	}
 
 	public static Collection<Client> getAllClient(){
 		return DAOactors.getAllClient();
+	}
+	
+	public static Client getClientById(long idClient){
+		return DAOactors.getClientById(idClient);
 	}
 
 }

@@ -1,14 +1,34 @@
 package service;
 
+import java.util.List;
+
 import dao.DAO;
 import dao.DAOaccount;
 import metier.*;
-
 
 public class ServiceAccount {
 
 	public static AccountCurrent getCurrentAccountById(long idClient) {
 		return DAOaccount.getCurrentAccount(idClient);
+	}
+
+	public static Boolean accountTransfer(long debitAccount, long creditAccount, double somme) {
+		List<Long> listeId = (List<Long>) DAOaccount.getAllIdAccount();
+
+		for (Long long1 : listeId) {
+			if (long1 == debitAccount) {
+				for (Long long2 : listeId) {
+					if (long2 == creditAccount) {
+						DAOaccount.updateSold(somme, creditAccount);
+						DAOaccount.updateSold(-somme, debitAccount);
+
+						return true;
+					}
+				}
+			}
+		}
+
+		return false;
 	}
 
 	public static AccountSaving getSavingAccountById(long idClient) {

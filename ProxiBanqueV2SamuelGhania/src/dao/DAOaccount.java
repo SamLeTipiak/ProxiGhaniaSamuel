@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -16,14 +17,21 @@ import metier.CardVisa;
  * @author Samuel Bouchet - Ghania Bouzemame
  * @version 2.0
  * 
- * <b>DAOaccount est la classe dans laquelle sont présentes les méthodes permettant de récupérer les comptes clients depuis la base de données.</b>
+ *          <b>DAOaccount est la classe dans laquelle sont présentes les
+ *          méthodes permettant de récupérer les comptes clients depuis la base
+ *          de données.</b>
  * 
  */
 public class DAOaccount implements IDAOaccount {
 
 	/**
 	 * @param idClient
+
 	 * @return ac retourne le compte courant du client correspondant à l'identifiant passé en paramètre.
+
+	 * @return ac retourne le compte courant du client correspondant à
+	 *         l'identifiant passé en paramètre
+
 	 */
 	public static AccountCurrent getCurrentAccount(Long idClient) {
 
@@ -70,12 +78,13 @@ public class DAOaccount implements IDAOaccount {
 
 	}
 
-
-	
-	
 	/**
 	 * @param idClient
+
 	 * @return sc retourne le compte épargne du client correspondant à l'identifiant passé en paramètre.
+
+	 * @return sc retourne le compte épargne du client correspondant à
+	 *         l'identifiant passé en paramètre
 	 */
 
 	public static AccountSaving getSavingAccount(Long idClient) {
@@ -160,6 +169,24 @@ public class DAOaccount implements IDAOaccount {
 			BDD.seDeconnecter(cnx);
 		}
 
+	}
+
+	public static void updateSold(double somme, long id) {
+		Connection cnx = BDD.seConnecter();
+
+		try {
+
+			String sql = "update currentaccount set sold = sold + ? where idclient=?";
+			PreparedStatement stat = cnx.prepareStatement(sql);
+			stat.setDouble(1, somme);
+			stat.setLong(2, id);
+			stat.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			BDD.seDeconnecter(cnx);
+		}
 	}
 
 }

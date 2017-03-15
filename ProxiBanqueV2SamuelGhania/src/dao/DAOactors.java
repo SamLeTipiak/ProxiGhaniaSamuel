@@ -8,26 +8,77 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import metier.Adviser;
+import metier.Client;
 
 public class DAOactors implements IDAOactors {
 
-	public static Adviser getAdviserById(long idAdviser, Connection cnx) throws SQLException {
+	public static Adviser getAdviserById(long idAdviser) {
 
-		Statement stat = cnx.createStatement();
-		String sql = "select * from adviser";
+		Connection cnx = BDD.seConnecter();
 
-		ResultSet res = stat.executeQuery(sql);
-		while (res.next()) {
-			long idadv = res.getInt("idadviser");
-			String idag = res.getString("idagence");
-			String firstn = res.getString("firstname");
-			String lastn = res.getString("lastname");
-			String pswd = res.getString("password");
-			
-			Adviser adv = new Adviser(idadv, idag, firstn, lastn, pswd);
-			if (idadv == idAdviser) {
-				return adv;
+		Statement stat;
+		try {
+			stat = cnx.createStatement();
+
+			String sql = "select * from adviser";
+
+			ResultSet res;
+
+			res = stat.executeQuery(sql);
+
+			while (res.next()) {
+				long idadv = res.getInt("idadviser");
+				String idag = res.getString("idagence");
+				String firstn = res.getString("firstname");
+				String lastn = res.getString("lastname");
+				String pswd = res.getString("password");
+
+				Adviser adv = new Adviser(idadv, idag, firstn, lastn, pswd);
+				if (idadv == idAdviser) {
+					return adv;
+				}
 			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			BDD.seDeconnecter(cnx);
+		}
+
+		return null;
+	}
+
+	public static Collection<Client> getAllClient() {
+		Connection cnx = BDD.seConnecter();
+
+		Collection<Client> listClient = new ArrayList<>();
+
+		Statement stat;
+		try {
+			stat = cnx.createStatement();
+			String sql = "select * from client ";
+
+			ResultSet res = stat.executeQuery(sql);
+			while (res.next()) {
+				long idcl = res.getInt("idclient");
+				String idag = res.getString("idagence");
+				long idadv = res.getInt("idadviser");
+				String firstn = res.getString("firstname");
+				String lastn = res.getString("lastname");
+				String adr = res.getString("adress");
+				String cp = res.getString("zipcode");
+				String town = res.getString("town");
+				String pn = res.getString("telnumber");
+
+				Client cli = new Client(idcl, idag, idadv, firstn, lastn, adr, cp, town, pn);
+				listClient.add(cli);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			BDD.seDeconnecter(cnx);
 		}
 
 		return null;

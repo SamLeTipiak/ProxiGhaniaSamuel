@@ -25,9 +25,10 @@ public class Client extends Actor {
 	}
 	protected etype type;
 
-	public Client(long idClient, String idAgence, String lastName, String firstName, String telNumber, String adress,
+	public Client(long idClient, String idAgence,long idAviser , String lastName, String firstName, String telNumber, String adress,
 			String zipCode, String town) {
 		super(idAgence, lastName, firstName);
+		this.idAviser = idAviser;
 		this.address = adress;
 		this.zipCode = zipCode;
 		this.town = town;

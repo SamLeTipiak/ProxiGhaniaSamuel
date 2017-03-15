@@ -54,6 +54,10 @@ public class Client extends Actor {
 		this.town = town;
 		this.telNumber = telNumber;
 	}
+	
+	public Client(){
+		super();
+	}
 
 	public long getIdAdviser() {
 		return idAdviser;

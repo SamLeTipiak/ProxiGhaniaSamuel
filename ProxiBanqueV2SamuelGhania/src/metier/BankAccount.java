@@ -31,6 +31,11 @@ public class BankAccount {
 		this.sold = sold;
 		this.openDate = openDate;
 	}
+	
+	public BankAccount(){
+		super();
+	}
+	
 
 	// Getters setters
 	public double getSold() {

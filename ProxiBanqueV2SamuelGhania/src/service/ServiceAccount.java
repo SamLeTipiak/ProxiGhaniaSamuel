@@ -4,12 +4,24 @@ package service;
 
 
 import dao.DAO;
+import dao.DAOaccount;
 import metier.*;
 
-import metier.BankAccount.etype;
+//import metier.BankAccount.etype;
 
 public class ServiceAccount {
 
+	public static AccountCurrent getCurrentAccountById(long idClient){
+		return DAOaccount.getCurrentAccount(idClient) ;
+	}
+	
+	public static AccountSaving getSavingAccountById(long idClient){
+		return DAOaccount.getSavingAccount(idClient) ;
+	}
+	
+	
+	
+	
 //	public static void addAccountToClient(long idClient, BankAccount.etype type, long startSold) {
 //
 //		switch (type) {

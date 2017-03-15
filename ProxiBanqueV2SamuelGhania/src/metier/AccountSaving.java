@@ -12,6 +12,10 @@ public class AccountSaving extends BankAccount{
 		this.rateAccount = 3.0/100.0;
 		super.type = BankAccount.etype.SAVING_ACCOUNT;
 	}
+	
+	public AccountSaving(){
+		super();
+	}
 
 //	Getter setter
 	public double getRateAccount() {

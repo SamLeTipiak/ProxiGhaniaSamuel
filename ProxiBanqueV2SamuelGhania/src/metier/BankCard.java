@@ -4,7 +4,7 @@ public class BankCard {
 	
 //	Attributs
 	private long numCard;
-	private int passwordCard;
+	private String passwordCard;
 	private long idClient;
 	
 	private static long newNum = 100L;
@@ -20,7 +20,7 @@ public class BankCard {
 	
 	
 	
-public BankCard(long numCard, int passwordCard, long idClient) {
+public BankCard(long numCard, String passwordCard, long idClient) {
 		super();
 		this.numCard = numCard;
 		this.passwordCard = passwordCard;
@@ -28,14 +28,14 @@ public BankCard(long numCard, int passwordCard, long idClient) {
 	}
 
 
-//	Constructeur
-	public BankCard(long idClient) {
-		super();
-		newNum++;
-		this.numCard = newNum;
-		this.passwordCard = numPassword();
-		this.idClient = idClient;
-	}
+////	Constructeur
+//	public BankCard(long idClient) {
+//		super();
+//		newNum++;
+//		this.numCard = newNum;
+//		this.passwordCard = numPassword();
+//		this.idClient = idClient;
+//	}
 
 	
 //	Getters
@@ -43,7 +43,7 @@ public BankCard(long numCard, int passwordCard, long idClient) {
 		return numCard;
 	}
 
-	public int getPasswordCard() {
+	public String getPasswordCard() {
 		return passwordCard;
 	}
 

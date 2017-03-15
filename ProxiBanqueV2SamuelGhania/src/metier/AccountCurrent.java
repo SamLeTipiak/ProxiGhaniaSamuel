@@ -1,50 +1,40 @@
 package metier;
 
-public class AccountCurrent extends BankAccount{
+public class AccountCurrent extends BankAccount {
 
-//	qttribut
-	
+	// qttribut
+
 	private boolean isOverdraw;
 	private BankCard card;
-	
-	
-//	Constructeur
+
+	// Constructeur
 	public AccountCurrent(long idClient, long numAccount, double sold, String openDate, BankCard card) {
 		super(idClient, numAccount, sold, openDate);
 		this.isOverdraw = false;
-		this.card=card;
-	super.type = BankAccount.etype.CURRENT_ACCOUNT;
+		this.card = card;
+		super.type = BankAccount.etype.CURRENT_ACCOUNT;
 	}
 
+	public AccountCurrent() {
+		super();
+	}
 
-//	Getter setter	
-
-
+	// Getter setter
 
 	public boolean isOverdraw() {
 		return isOverdraw;
 	}
 
-
 	public void setOverdraw(boolean isOverdraw) {
 		this.isOverdraw = isOverdraw;
 	}
-
 
 	public BankCard getCard() {
 		return card;
 	}
 
-
 	public void setCard(BankCard card) {
 		this.card = card;
 	}
-
-
-
-	
-
-	
-	
 
 }

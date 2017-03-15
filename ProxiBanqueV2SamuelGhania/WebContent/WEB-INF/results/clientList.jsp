@@ -47,8 +47,9 @@
 				<td class="col-md-1">${Client.town}</td>
 				<td class="col-md-1">${Client.telNumber}</td>
 
-				<td class="col-md-2"><input type="submit" value="Modifier" /></td>
-				<td class="col-md-2"><input type="submit" value="Comptes" /></td>
+				<td class="col-md-2"><a href=""><input type="submit" value="Modifier"></a></td>
+				
+				<td class="col-md-2"><a href="AccountListServlet"><input type="submit" value="Comptes" name=""/></a></td>
 
 
 			</tr>

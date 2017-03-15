@@ -1,8 +1,9 @@
-Application ProxiBanqueSI - Version 2.0
+******** Application ProxiBanqueSI - Version 2.0 ********
 
-Auteurs : Samuel Bouchet - Ghania Bouzemame
+         Auteurs : Samuel Bouchet - Ghania Bouzemame
 
-Présentation
+
+******** Présentation
 
 Cette application a pour but de faciliter la gestion des comptes clients de votre banque.
 
@@ -11,7 +12,8 @@ Ainsi, aux fonctionnalités déjà présentes dans la version 1 s'ajoutent ici la po
 ProxiBanqueSI, une application proche de ses utilisateurs pour une banque plus proche de ses clients.
 
 
-Contenu du livrable
+
+******** Contenu du livrable
 
 Vous trouverez avec cette présentation :
 
@@ -23,8 +25,12 @@ Vous trouverez avec cette présentation :
 - l'archive ProxiBanqueSI.war
 
 
-Démarrage
+
+******** Démarrage
 
 Afin de lancer l'application, il suffit de saisir dans votre navigateur l'url suivante :
 
 http://localhost:8080/ProxiBanque 
+
+Identifiant : 1
+Mot de passe : truc

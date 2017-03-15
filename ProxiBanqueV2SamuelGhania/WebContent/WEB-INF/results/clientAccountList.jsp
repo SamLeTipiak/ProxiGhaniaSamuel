@@ -1,9 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Liste de comptes</title>
 </head>
 <body>
@@ -12,37 +14,47 @@
 		<h1>Voici la liste des comptes de ${Client.lastName }
 			${Client.firstName } :</h1>
 	</div>
+	<div>
+		<h2>Compte courant</h2>
+		<table>
+			<tr>
 
-	<table>
-		<tr>
-			<th>Type de compte</th>
-			<th>Numéro de compte</th>
-			<th>Solde</th>
-			<th>Carte associée</th>
-		</tr>
-<tr>
-<td><b>Compte courant</b></td>
+				<th>NumÃ©ro de compte</th>
+				<th>Solde</th>
+				<th>Carte associÃ©e</th>
+			</tr>
+			<tr>
 
-<td>${sc.numAccount}</td>
+				<td>${ca.numAccount}</td>
 
-<td>${sc.sold}</td>
+				<td>${ca.sold}</td>
 
-<td>${sc.type }</td>
+				<td>${ca.type }</td>
 
-</tr>
+			</tr>
+		</table>
 
-<tr>
-<td><b>Compte épargne</b></td>
+		<h2>Compte Ã©pargne</h2>
 
-<td>${sc.num }</td>
+		<table>
+			<tr>
 
-<td></td>
+				<th>NumÃ©ro de compte</th>
+				<th>Solde</th>
+				<th>Carte associÃ©e</th>
+			</tr>
 
-<td></td>
+			<tr>
 
-</tr>
+				<td>${sa.numAccount}</td>
 
-	</table>
+				<td>${sa.sold}</td>
 
+				<td>${sa.type }</td>
+
+			</tr>
+
+		</table>
+	</div>
 </body>
 </html>

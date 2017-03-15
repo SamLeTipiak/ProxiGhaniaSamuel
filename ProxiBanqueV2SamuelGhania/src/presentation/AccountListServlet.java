@@ -3,6 +3,7 @@ package presentation;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import metier.Client;
+import service.ServiceActor;
 
 /**
  * Servlet implementation class AccountServlet
@@ -39,13 +41,26 @@ public class AccountListServlet extends HttpServlet {
 		// response.getWriter().append("Served at:
 		// ").append(request.getContextPath());
 
-		/*Collection<Client> clientList = new ArrayList<>();
-
-		HttpSession session = request.getSession();
-		session.setAttribute("ClientAccountList", clientAccountList);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/clientAccountList.jsp");
+		
+		HttpSession session = request.getSession(false);
+		session.getP
+		
+		// Client cl = ServiceAccount.getAllClient();
+		
+		AccountCurrent ca = ServiceAccount.getCurrentAccountByIdClient();
+		AccountSaving sa = ServiceAccount.getSavingAccountBYIdClient();
+		
+		HttpSession session = request.getSession(false);
+		
+		session.getAttribute("ClientList", clientList);
+		session.setAttribute("ca", ca);
+		session.setAttribute("sa", sa);
+		
+		
+	
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/results/clientAccountList.jsp");
 		dispatcher.forward(request, response);
-		*/
 		
 	}
 

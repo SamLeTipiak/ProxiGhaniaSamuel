@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 import metier.*;
 import service.ServiceActor;
 
@@ -43,16 +42,12 @@ public class ClientListServlet extends HttpServlet {
 		// response.getWriter().append("Served at:
 		// ").append(request.getContextPath());
 
-		Collection <Client> clientList = new ArrayList<>();
+		Collection<Client> clientList = new ArrayList<>();
 		clientList = ServiceActor.getAllClient();
-		List<Client> cl = (List<Client>) clientList; 
-		System.out.println(cl.get(1).getIdClient());
-		
+
 		HttpSession session = request.getSession(false);
 		session.setAttribute("ClientList", clientList);
-		
-	
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/results/clientList.jsp");
 		dispatcher.forward(request, response);
 	}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 15 Mars 2017 à 09:31
+-- Généré le :  Mer 15 Mars 2017 à 13:54
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  5.6.30
 
@@ -50,7 +50,7 @@ INSERT INTO `adviser` (`idadviser`, `idagence`, `firstname`, `lastname`, `passwo
 CREATE TABLE `bankcard` (
   `cardnumber` int(11) NOT NULL,
   `idcurrentaccount` int(11) NOT NULL,
-  `type` varchar(20) NOT NULL,
+  `cardtype` varchar(20) NOT NULL,
   `cardpassword` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -58,7 +58,7 @@ CREATE TABLE `bankcard` (
 -- Contenu de la table `bankcard`
 --
 
-INSERT INTO `bankcard` (`cardnumber`, `idcurrentaccount`, `type`, `cardpassword`) VALUES
+INSERT INTO `bankcard` (`cardnumber`, `idcurrentaccount`, `cardtype`, `cardpassword`) VALUES
 (1, 1, 'VISA', '1234'),
 (2, 2, 'VISA', '1212'),
 (3, 3, 'ELECTRON', '0007');

@@ -17,7 +17,7 @@ import metier.CardVisa;
  * @author Samuel Bouchet - Ghania Bouzemame
  * @version 2.0
  * 
- * <b>DAOaccount est la classe dans laquelle sont présentes les méthodes permettant de récupérer les listes de clients et de comptes depuis la base de données.</b>
+ * <b>DAOaccount est la classe dans laquelle sont présentes les méthodes permettant de récupérer les comptes clients depuis la base de données.</b>
  * 
  */
 public class DAOaccount implements IDAOaccount {

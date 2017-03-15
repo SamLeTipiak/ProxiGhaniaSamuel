@@ -15,29 +15,6 @@
 			${Client.firstName } :</h1>
 	</div>
 	
-	<table>
-	<c:forEach items="${ClientList}" var="Client">
-			<tr class="row">
-				<td class="col-md-1">${Client.idClient}</td>
-				<td class="col-md-1">${Client.lastName}</td>
-				<td class="col-md-1">${Client.firstName}</td>
-				<td class="col-md-1">${Client.idAdviser}</td>
-				<td class="col-md-1">${Client.address}</td>
-				<td class="col-md-1">${Client.zipCode}</td>
-				<td class="col-md-1">${Client.town}</td>
-				<td class="col-md-1">${Client.telNumber}</td>
-
-				<td class="col-md-2"><a href=""><input type="submit" value="Modifier"></a></td>
-				
-				<td class="col-md-2"><a href="AccountListServlet"><input type="submit" value="Comptes" name=""/></a></td>
-
-
-			</tr>
-
-
-		</c:forEach>
-	</table>
-	
 	<div>
 		<h2>Compte courant</h2>
 		<table>
@@ -53,7 +30,7 @@
 
 				<td>${ca.sold}</td>
 
-				<td>${ca.type }</td>
+				<td>${Card.type }</td>
 				
 
 			</tr>
@@ -66,7 +43,6 @@
 
 				<th>Numéro de compte</th>
 				<th>Solde</th>
-				<th>Carte associée</th>
 			</tr>
 
 			<tr>
@@ -74,8 +50,6 @@
 				<td>${sa.numAccount}</td>
 
 				<td>${sa.sold}</td>
-
-				<td>${sa.type }</td>
 
 			</tr>
 

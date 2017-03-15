@@ -10,13 +10,24 @@ import java.util.Collection;
 import metier.Adviser;
 import metier.Client;
 
+/**
+ * @author Samuel Bouchet - Ghania Bouzemame
+ * @version 2.0
+ * 
+ * <b>DAOactors est la classe permettant de récupérer la liste clients depuis la base de données ainsi que de vérifier la connexion d'un conseiller à l'application. 
+ */
 public class DAOactors implements IDAOactors {
 
+	/**
+	 * @param idAdviser
+	 * @return adv
+	 * 
+	 * Cette méthode permet de vérifier que le login saisi par un utilisateur existe bien, puis que le mot de passe saisi est bien celui qui y est associé.
+	 */
 	public static Adviser getAdviserById(long idAdviser) {
 
 		Connection cnx = BDD.seConnecter();
 
-		
 		try {
 			Statement stat = cnx.createStatement();
 
@@ -30,7 +41,7 @@ public class DAOactors implements IDAOactors {
 				String lastn = res.getString("lastname");
 				String pswd = res.getString("password");
 
-				Adviser adv = new Adviser(idadv, idag, lastn, firstn,  pswd);
+				Adviser adv = new Adviser(idadv, idag, lastn, firstn, pswd);
 				if (idadv == idAdviser) {
 					return adv;
 				}
@@ -45,6 +56,11 @@ public class DAOactors implements IDAOactors {
 		return null;
 	}
 
+	/**
+	 * @return listClient
+	 * 
+	 * retourne la liste des clients enregistrés en base de données
+	 */
 	public static Collection<Client> getAllClient() {
 		Connection cnx = BDD.seConnecter();
 
@@ -54,7 +70,6 @@ public class DAOactors implements IDAOactors {
 		try {
 			stat = cnx.createStatement();
 			String sql = "select idclient, adviser.idadviser, idagence, client.firstname,  client.lastname, address, zipcode, town, telnumber from client, adviser where adviser.idadviser = client.idadviser group by idclient";
-
 
 			ResultSet res = stat.executeQuery(sql);
 			while (res.next()) {
@@ -70,7 +85,7 @@ public class DAOactors implements IDAOactors {
 
 				Client cli = new Client(idcl, idag, idadv, lastn, firstn, adr, cp, town, pn);
 				listClient.add(cli);
-				
+
 			}
 			return listClient;
 
@@ -80,7 +95,6 @@ public class DAOactors implements IDAOactors {
 		} finally {
 			BDD.seDeconnecter(cnx);
 		}
-
 
 	}
 

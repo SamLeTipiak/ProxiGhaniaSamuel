@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import metier.AccountCurrent;
 import metier.AccountSaving;
+import metier.BankCard;
 import metier.Client;
 import service.ServiceAccount;
 import service.ServiceActor;
@@ -44,10 +45,12 @@ public class AccountListServlet extends HttpServlet {
 		long Id = Long.valueOf(id);
 		AccountCurrent ca = ServiceAccount.getCurrentAccountById(Id);
 		AccountSaving sa = ServiceAccount.getSavingAccountById(Id);
+		
+		BankCard cb = ca.getCard();
 
 		HttpSession session = request.getSession(false);
 
-		
+		session.setAttribute("Card", cb);
 		session.setAttribute("ca", ca);
 		session.setAttribute("sa", sa);
 		

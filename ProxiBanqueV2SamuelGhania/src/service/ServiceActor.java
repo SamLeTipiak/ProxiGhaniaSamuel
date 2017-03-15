@@ -22,5 +22,9 @@ public class ServiceActor {
 	public static Collection<Client> getAllClient(){
 		return DAOactors.getAllClient();
 	}
+	
+	public static Client getClientById(long idClient){
+		return DAOactors.getClientById(idClient);
+	}
 
 }

@@ -22,8 +22,16 @@ public class ServiceAccount {
 	}
 	
 	
-	public static void accountTransfer(BankAccount debitAccount, BankAccount creditAccount, double somme){
-		List<Long> liste0Id = 
+	public static void accountTransfer(long debitAccount, long creditAccount, double somme){
+		List<Long> listeId = (List<Long>) DAOaccount.getAllIdAccount();
+		
+		for (Long long1 : listeId) {
+			if (long1 == debitAccount){
+				for (Long long2 : listeId) {
+					if 
+				}
+			}
+		}
 	}
 	
 	

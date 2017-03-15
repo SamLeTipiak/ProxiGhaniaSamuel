@@ -99,12 +99,11 @@ public class DAOaccount implements IDAOaccount {
 
 			while (res.next()) {
 				long idcl = res.getInt("idclient");
-				long idca = res.getInt("idcurrentaccount");
+				long idsa = res.getInt("idsavingaccount");
 				double so = res.getFloat("sold");
 				String date = res.getString("opendate");
-				long cn = res.getInt("cardnumber");
 
-				sc = new AccountSaving(idcl, idca, so, date);
+				sc = new AccountSaving(idcl, idsa, so, date);
 
 			}
 

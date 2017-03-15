@@ -22,16 +22,23 @@ public class ServiceAccount {
 	}
 	
 	
-	public static void accountTransfer(long debitAccount, long creditAccount, double somme){
+	public static Boolean accountTransfer(long debitAccount, long creditAccount, double somme){
 		List<Long> listeId = (List<Long>) DAOaccount.getAllIdAccount();
 		
 		for (Long long1 : listeId) {
 			if (long1 == debitAccount){
 				for (Long long2 : listeId) {
-					if 
+					if(long2 == creditAccount){
+						DAOaccount.updateSold(somme, creditAccount);
+						DAOaccount.updateSold(-somme, debitAccount);
+						
+						return true;
+					}
 				}
 			}
 		}
+		
+		return false;
 	}
 	
 	

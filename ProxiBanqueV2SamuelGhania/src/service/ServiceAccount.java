@@ -3,6 +3,8 @@ package service;
 
 
 
+import java.util.List;
+
 import dao.DAO;
 import dao.DAOaccount;
 import metier.*;
@@ -18,6 +20,12 @@ public class ServiceAccount {
 	public static AccountSaving getSavingAccountById(long idClient){
 		return DAOaccount.getSavingAccount(idClient) ;
 	}
+	
+	
+	public static void accountTransfer(BankAccount debitAccount, BankAccount creditAccount, double somme){
+		List<Long> liste0Id = 
+	}
+	
 	
 	
 	

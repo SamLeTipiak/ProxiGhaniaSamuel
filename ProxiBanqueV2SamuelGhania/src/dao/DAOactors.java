@@ -14,7 +14,7 @@ import metier.Client;
  * @author Samuel Bouchet - Ghania Bouzemame
  * @version 2.0
  * 
- * <b>DAOactors est la classe permettant de récupérer la liste clients depuis la base de données ainsi que de vérifier la connexion d'un conseiller à l'application. 
+ * <b>DAOactors est la classe permettant de récupérer la liste clients depuis la base de données ainsi que de vérifier la connexion d'un conseiller à l'application.</b>
  */
 public class DAOactors implements IDAOactors {
 
@@ -61,7 +61,7 @@ public class DAOactors implements IDAOactors {
 	/**
 	 * @return listClient
 	 * 
-	 * retourne la liste des clients enregistrés en base de données
+	 * retourne la liste des clients enregistrés en base de données.
 	 */
 	public static Collection<Client> getAllClient() {
 		Connection cnx = BDD.seConnecter();
@@ -100,6 +100,12 @@ public class DAOactors implements IDAOactors {
 
 	}
 
+	/**
+	 * @param idClient
+	 * @return cli
+	 * 
+	 * retourne le client correspondant à l'identifiant passé en paramètre.
+	 */
 	public static Client getClientById(long idClient) {
 
 		Client cli=new Client();;

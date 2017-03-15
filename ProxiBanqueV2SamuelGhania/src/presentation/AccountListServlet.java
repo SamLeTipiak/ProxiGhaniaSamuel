@@ -45,7 +45,7 @@ public class AccountListServlet extends HttpServlet {
 		long Id = Long.valueOf(id);
 		AccountCurrent ca = ServiceAccount.getCurrentAccountById(Id);
 		AccountSaving sa = ServiceAccount.getSavingAccountById(Id);
-		
+
 		BankCard cb = ca.getCard();
 
 		HttpSession session = request.getSession(false);
@@ -53,8 +53,6 @@ public class AccountListServlet extends HttpServlet {
 		session.setAttribute("Card", cb);
 		session.setAttribute("ca", ca);
 		session.setAttribute("sa", sa);
-		
-	
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/results/clientAccountList.jsp");
 		dispatcher.forward(request, response);

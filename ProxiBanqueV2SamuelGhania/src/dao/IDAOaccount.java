@@ -4,7 +4,7 @@ import metier.AccountCurrent;
 
 public interface IDAOaccount {
 	
-	public static AccountCurrent getCurrenAccount(Long idClient) {
+	public static AccountCurrent getCurrentAccount(Long idClient) {
 		return null;
 	} 
 

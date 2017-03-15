@@ -47,6 +47,7 @@ public class Client extends Actor {
 	public Client(long idClient, String idAgence, long idAviser, String lastName, String firstName, String telNumber,
 			String adress, String zipCode, String town) {
 		super(idAgence, lastName, firstName);
+		this.idClient = idClient;
 		this.idAdviser = idAviser;
 		this.address = adress;
 		this.zipCode = zipCode;

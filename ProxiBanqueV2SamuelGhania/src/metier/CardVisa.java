@@ -2,8 +2,8 @@ package metier;
 
 public class CardVisa extends BankCard{
 
-	public CardVisa(long idClient) {
-		super(idClient);
+	public CardVisa(long numCard, int passwordCard,long idClient) {
+		super(numCard, passwordCard, idClient);
 		super.type = BankCard.etype.VISA;
 	}
 

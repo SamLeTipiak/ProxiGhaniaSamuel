@@ -17,6 +17,17 @@ public class BankCard {
 	protected etype type;
 	
 	
+	
+	
+	
+public BankCard(long numCard, int passwordCard, long idClient) {
+		super();
+		this.numCard = numCard;
+		this.passwordCard = passwordCard;
+		this.idClient = idClient;
+	}
+
+
 //	Constructeur
 	public BankCard(long idClient) {
 		super();

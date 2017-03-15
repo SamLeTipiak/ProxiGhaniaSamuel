@@ -24,7 +24,7 @@ public class Actor {
 	private String firstName;
 
 	public Actor(String adAgence, String lastName, String firstName) {
-		
+		super();
 		this.idAgence = adAgence;
 		this.lastName = lastName;
 		this.firstName = firstName;

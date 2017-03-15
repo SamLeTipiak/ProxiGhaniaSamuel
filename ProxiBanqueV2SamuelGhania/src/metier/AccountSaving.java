@@ -7,8 +7,8 @@ public class AccountSaving extends BankAccount{
 	
 	
 //	Constructeur
-	public AccountSaving(long idClient, double sold, String openDate) {
-		super(idClient, sold, openDate);
+	public AccountSaving(long idClient, long numAccount, double sold, String openDate) {
+		super(idClient, numAccount, sold, openDate);
 		this.rateAccount = 3.0/100.0;
 		super.type = BankAccount.etype.SAVING_ACCOUNT;
 	}

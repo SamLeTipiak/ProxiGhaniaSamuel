@@ -23,10 +23,10 @@ public class BankAccount {
 		return type;
 	}
 
-	public BankAccount(long idClient, double sold, String openDate) {
+	public BankAccount(long idClient, long numAccount, double sold, String openDate) {
 		super();
 		this.idClient = idClient;
-		newId++;
+		this.numAccount = numAccount;
 		this.numAccount = newId;
 		this.sold = sold;
 		this.openDate = openDate;

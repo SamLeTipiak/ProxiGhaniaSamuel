@@ -59,7 +59,7 @@ public class DAOactors implements IDAOactors {
 			ResultSet res = stat.executeQuery(sql);
 			while (res.next()) {
 				long idcl = res.getInt("idclient");
-				String idag = res.getString("idagence");
+				String idag = res.getString("adviser.idagence");
 				long idadv = res.getInt("idadviser");
 				String firstn = res.getString("firstname");
 				String lastn = res.getString("lastname");

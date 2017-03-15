@@ -166,11 +166,20 @@ public class DAOaccount implements IDAOaccount {
 
 		try {
 
-			String sql = "update currentaccount set sold = sold + ? where idclient=?";
-			PreparedStatement stat = cnx.prepareStatement(sql);
-			stat.setDouble(1, somme);
-			stat.setLong(2, id);
-			stat.executeUpdate();
+			if (id < 999) {
+
+				String sql = "update currentaccount set sold = sold + ? where idclient=?";
+				PreparedStatement stat = cnx.prepareStatement(sql);
+				stat.setDouble(1, somme);
+				stat.setLong(2, id);
+				stat.executeUpdate();
+			} else {
+				String sql2 = "update savingaccount set sold = sold + ? where idclient=?";
+				PreparedStatement stut = cnx.prepareStatement(sql2);
+				stut.setDouble(1, somme);
+				stut.setLong(2, id);
+				stut.executeUpdate();
+			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();

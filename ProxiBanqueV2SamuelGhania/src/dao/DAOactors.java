@@ -26,6 +26,8 @@ public class DAOactors implements IDAOactors {
 	 */
 	public static Adviser getAdviserById(long idAdviser) {
 
+		Adviser adv = new Adviser();
+		
 		Connection cnx = BDD.seConnecter();
 
 		try {
@@ -41,19 +43,19 @@ public class DAOactors implements IDAOactors {
 				String lastn = res.getString("lastname");
 				String pswd = res.getString("password");
 
-				Adviser adv = new Adviser(idadv, idag, lastn, firstn, pswd);
+				adv = new Adviser(idadv, idag, lastn, firstn, pswd);
 				if (idadv == idAdviser) {
 					return adv;
 				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			return null;
+			return adv;
 		} finally {
 			BDD.seDeconnecter(cnx);
 		}
 
-		return null;
+		return adv;
 	}
 
 	/**

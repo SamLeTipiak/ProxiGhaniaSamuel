@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Collection;
 
 import metier.AccountCurrent;
 import metier.AccountSaving;
@@ -99,5 +100,44 @@ public class DAOaccount implements IDAOaccount {
 		}
 
 	}
+	
+	public static Collection<Long> getAllIdAccount() {
+
+		Collection<Long> listId;
+
+		Connection cnx = BDD.seConnecter();
+
+		Statement stat;
+		try {
+			stat = cnx.createStatement();
+
+			String sql = "select idcurrentaccount, idsavingaccount from currentaccount,savingaccount";
+
+			ResultSet res;
+
+			res = stat.executeQuery(sql);
+
+			while (res.next()) {
+				long idcl = res.getInt("idclient");
+				long idca = res.getInt("idcurrentaccount");
+				double so = res.getFloat("sold");
+				String date = res.getString("opendate");
+				long cn = res.getInt("cardnumber");
+
+				sc = new AccountSaving(idcl, idca, so, date);
+
+			}
+
+			return sc;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return sc;
+		} finally {
+			BDD.seDeconnecter(cnx);
+		}
+
+	}
+	
 
 }

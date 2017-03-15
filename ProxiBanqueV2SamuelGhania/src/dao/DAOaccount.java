@@ -9,8 +9,6 @@ import java.util.Collection;
 
 import metier.AccountCurrent;
 import metier.AccountSaving;
-import metier.Adviser;
-import metier.BankAccount;
 import metier.CardElectron;
 import metier.CardVisa;
 
@@ -25,7 +23,7 @@ public class DAOaccount implements IDAOaccount {
 
 	/**
 	 * @param idClient
-	 * @return ac retourne le compte courant du client correspondant à l'identifiant passé en paramètre
+	 * @return ac retourne le compte courant du client correspondant à l'identifiant passé en paramètre.
 	 */
 	public static AccountCurrent getCurrentAccount(Long idClient) {
 
@@ -77,7 +75,7 @@ public class DAOaccount implements IDAOaccount {
 	
 	/**
 	 * @param idClient
-	 * @return sc retourne le compte épargne du client correspondant à l'identifiant passé en paramètre
+	 * @return sc retourne le compte épargne du client correspondant à l'identifiant passé en paramètre.
 	 */
 
 	public static AccountSaving getSavingAccount(Long idClient) {
@@ -90,7 +88,7 @@ public class DAOaccount implements IDAOaccount {
 		try {
 			stat = cnx.createStatement();
 
-			String sql = "select idclient, bankcard.idsavingaccount, sold, opendate from client, savingaccount where  client.idsavingaccount = savingaccount.idsavingaccount and idclient = "
+			String sql = "select idclient, client.idsavingaccount, sold, opendate from client, savingaccount where  client.idsavingaccount = savingaccount.idsavingaccount and idclient = "
 					+ idClient + "  group by idclient";
 
 			ResultSet res;
@@ -118,6 +116,11 @@ public class DAOaccount implements IDAOaccount {
 
 	}
 
+	/**
+	 * @return lisId 
+	 * retourne la liste de tous les numéros de comptes afin de vérifier qu'ils existent bien au sein de la banque avant d'effectuer un virement.
+	 *
+	 */
 	public static Collection<Long> getAllIdAccount() {
 
 		Collection<Long> listId = new ArrayList<>();

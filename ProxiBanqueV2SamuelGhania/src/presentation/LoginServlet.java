@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
 		String login = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 
-		Long log = Long.valueOf(login);
+		long log = Long.valueOf(login);
 		Adviser adv = ServiceActor.getAdviserByIdAdviser(log);
 
 		RequestDispatcher dispatcher = null;

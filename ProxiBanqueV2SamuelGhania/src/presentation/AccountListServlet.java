@@ -50,9 +50,9 @@ public class AccountListServlet extends HttpServlet {
 
 		HttpSession session = request.getSession(false);
 
-		request.setAttribute("Card", cb);
-		request.setAttribute("ca", ca);
-		request.setAttribute("sa", sa);
+		session.setAttribute("Card", cb);
+		session.setAttribute("ca", ca);
+		session.setAttribute("sa", sa);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/results/clientAccountList.jsp");
 		dispatcher.forward(request, response);

@@ -7,7 +7,6 @@ public class BankCard {
 	private String passwordCard;
 	private long idClient;
 	
-	private static long newNum = 100L;
 	
 //	Valeurs ENUM
 	public enum etype {

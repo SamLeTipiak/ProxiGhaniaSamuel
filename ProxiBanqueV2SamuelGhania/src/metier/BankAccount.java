@@ -1,6 +1,23 @@
 
 package metier;
 
+/**
+ * @author Samuel Bouchet - Ghania Bouzemame
+ * @version 2.0
+ * 
+ *          <b>BankAccount est la classe représentant les comptes clients.</b>
+ * 
+ *          <div>Chaque compte est caractérisé par les propriétés suivantes :
+ *          <ul>
+ *          <li>idClient, l'identifiant du client au sein de la banque</li>
+ *          <li>numAccount, le numéro du compte</li>
+ *          <li>sold, le solde du compte</li>
+ *          <li>openDate, la date d'ouverture du compte</li>
+ *          <li>type, le type de compte, courant ou épargne</li>
+ *          </ul>
+ *          </div>
+ *
+ */
 public class BankAccount {
 
 	// attributs
@@ -9,7 +26,6 @@ public class BankAccount {
 	private double sold;
 	private String openDate;
 
-	private static long newId = 1;
 
 	public enum etype {
 		CURRENT_ACCOUNT, SAVING_ACCOUNT
@@ -30,11 +46,10 @@ public class BankAccount {
 		this.sold = sold;
 		this.openDate = openDate;
 	}
-	
-	public BankAccount(){
+
+	public BankAccount() {
 		super();
 	}
-	
 
 	// Getters setters
 	public double getSold() {

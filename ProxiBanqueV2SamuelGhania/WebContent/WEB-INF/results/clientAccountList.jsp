@@ -14,7 +14,7 @@
 		<h1>Voici la liste des comptes de ${Client.lastName }
 			${Client.firstName } :</h1>
 	</div>
-	
+
 	<div>
 		<h2>Compte courant</h2>
 		<table>
@@ -30,11 +30,11 @@
 				<td>${ca.numAccount}</td>
 
 				<td>${ca.sold}</td>
-				
+
 				<td>${ca.openDate}</td>
 
 				<td>${Card.type }</td>
-				
+
 
 			</tr>
 		</table>
@@ -53,9 +53,9 @@
 
 				<td>${sa.numAccount}</td>
 
-				<td>${sa.sold}</td>
-				
 				<td>${sa.openDate}</td>
+				
+				<td>${sa.sold}</td>
 
 			</tr>
 

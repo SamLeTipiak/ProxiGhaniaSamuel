@@ -3,6 +3,7 @@ package presentation;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,10 +43,10 @@ public class ClientListServlet extends HttpServlet {
 		// response.getWriter().append("Served at:
 		// ").append(request.getContextPath());
 
-		Collection<Client> clientList = new ArrayList<>();
+		Collection <Client> clientList = new ArrayList<>();
 		clientList = ServiceActor.getAllClient();
-
-		
+		List<Client> cl = (List<Client>) clientList; 
+		System.out.println(cl.get(1).getIdClient());
 		HttpSession session = request.getSession(false);
 		session.setAttribute("ClientList", clientList);
 		

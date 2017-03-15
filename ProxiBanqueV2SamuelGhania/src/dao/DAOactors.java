@@ -56,7 +56,11 @@ public class DAOactors implements IDAOactors {
 		Statement stat;
 		try {
 			stat = cnx.createStatement();
-			String sql = "select * from client ";
+			String sql = "select idclient, adviser.idadviser, idagence, client.firstname,  client.lastname, address, zipcode, town, telnumber "
+					+ " from client, adviser"
+					+"where adviser.idadviser = client.idadviser"
+					+"group by idclient";
+
 
 			ResultSet res = stat.executeQuery(sql);
 			while (res.next()) {

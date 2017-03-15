@@ -5,12 +5,14 @@ public class AccountCurrent extends BankAccount{
 //	qttribut
 	
 	private boolean isOverdraw;
+	private BankCard card;
 	
 	
 //	Constructeur
-	public AccountCurrent(long idClient, double sold, String openDate) {
+	public AccountCurrent(long idClient, double sold, String openDate, BankCard card) {
 		super(idClient, sold, openDate);
 		this.isOverdraw = false;
+		this.card=card;
 	super.type = BankAccount.etype.CURRENT_ACCOUNT;
 	}
 

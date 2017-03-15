@@ -1,15 +1,19 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.SQLException;
+import java.util.Collection;
 
 import metier.Adviser;
+import metier.Client;
 
 public interface IDAOactors {
 	
-	public static Adviser getAdviserById(long idAdviser, Connection cnx) throws SQLException {
+	public static Adviser getAdviserById(long idAdviser) {
 		return null;
-		
 	}
+	
+	public static Collection<Client> getAllClient() {
+		return null;
+	}
+	
 
 }

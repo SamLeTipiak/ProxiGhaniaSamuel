@@ -33,7 +33,7 @@ public class DAOactors implements IDAOactors {
 				String lastn = res.getString("lastname");
 				String pswd = res.getString("password");
 
-				Adviser adv = new Adviser(idadv, idag, firstn, lastn, pswd);
+				Adviser adv = new Adviser(idadv, idag, lastn, firstn,  pswd);
 				if (idadv == idAdviser) {
 					return adv;
 				}
@@ -74,7 +74,7 @@ public class DAOactors implements IDAOactors {
 				String town = res.getString("town");
 				String pn = res.getString("telnumber");
 
-				Client cli = new Client(idcl, idag, idadv, firstn, lastn, adr, cp, town, pn);
+				Client cli = new Client(idcl, idag, idadv, lastn, firstn, adr, cp, town, pn);
 				listClient.add(cli);
 			}
 

@@ -90,7 +90,7 @@ public class DAOaccount implements IDAOaccount {
 		try {
 			stat = cnx.createStatement();
 
-			String sql = "select idclient, bankcard.idcurrentaccount, sold, opendate, cardnumber, cardtype, cardpassword from client, currentaccount, bankcard where  client.idcurrentaccount = currentaccount.idcurrentaccount and currentaccount.idcurrentaccount = bankcard.idcurrentaccount and idclient = "
+			String sql = "select idclient, bankcard.idsavingaccount, sold, opendate from client, savingaccount where  client.idsavingaccount = savingaccount.idsavingaccount and idclient = "
 					+ idClient + "  group by idclient";
 
 			ResultSet res;

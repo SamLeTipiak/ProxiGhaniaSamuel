@@ -27,7 +27,6 @@ public class BankAccount {
 		super();
 		this.idClient = idClient;
 		this.numAccount = numAccount;
-		this.numAccount = newId;
 		this.sold = sold;
 		this.openDate = openDate;
 	}

@@ -61,8 +61,6 @@ public class DAOaccount implements IDAOaccount {
 
 	}
 
-	
-	
 	public static AccountSaving getSavingAccount(Long idClient) {
 
 		AccountSaving sc = new AccountSaving();
@@ -101,7 +99,7 @@ public class DAOaccount implements IDAOaccount {
 		}
 
 	}
-	
+
 	public static Collection<Long> getAllIdAccount() {
 
 		Collection<Long> listId = new ArrayList<>();
@@ -120,19 +118,27 @@ public class DAOaccount implements IDAOaccount {
 
 			while (res.next()) {
 				long idca = res.getInt("idcurrentaccount");
-
+				listId.add(idca);
 			}
 
-			return sc;
+			sql = "select idsavingaccountfrom savingaccount";
+
+			res = stat.executeQuery(sql);
+
+			while (res.next()) {
+				long idsa = res.getInt("idsavingaccount");
+				listId.add(idsa);
+			}
+
+			return listId;
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			return sc;
+			return listId;
 		} finally {
 			BDD.seDeconnecter(cnx);
 		}
 
 	}
-	
 
 }

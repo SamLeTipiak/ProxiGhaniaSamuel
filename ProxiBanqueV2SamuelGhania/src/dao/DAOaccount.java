@@ -14,8 +14,19 @@ import metier.BankAccount;
 import metier.CardElectron;
 import metier.CardVisa;
 
+/**
+ * @author Samuel Bouchet - Ghania Bouzemame
+ * @version 2.0
+ * 
+ * <b>DAOaccount est la classe dans laquelle sont présentes les méthodes permettant de récupérer les comptes clients depuis la base de données.</b>
+ * 
+ */
 public class DAOaccount implements IDAOaccount {
 
+	/**
+	 * @param idClient
+	 * @return ac retourne le compte courant du client correspondant à l'identifiant passé en paramètre
+	 */
 	public static AccountCurrent getCurrentAccount(Long idClient) {
 
 		AccountCurrent ac = new AccountCurrent();
@@ -60,6 +71,14 @@ public class DAOaccount implements IDAOaccount {
 		}
 
 	}
+
+
+	
+	
+	/**
+	 * @param idClient
+	 * @return sc retourne le compte épargne du client correspondant à l'identifiant passé en paramètre
+	 */
 
 	public static AccountSaving getSavingAccount(Long idClient) {
 

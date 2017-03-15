@@ -10,8 +10,20 @@ import java.util.Collection;
 import metier.Adviser;
 import metier.Client;
 
+/**
+ * @author Samuel Bouchet - Ghania Bouzemame
+ * @version 2.0
+ * 
+ * <b>DAOactors est la classe permettant de récupérer la liste clients depuis la base de données ainsi que de vérifier la connexion d'un conseiller à l'application. 
+ */
 public class DAOactors implements IDAOactors {
 
+	/**
+	 * @param idAdviser
+	 * @return adv
+	 * 
+	 * Cette méthode permet de vérifier que le login saisi par un utilisateur existe bien, puis que le mot de passe saisi est bien celui qui y est associé.
+	 */
 	public static Adviser getAdviserById(long idAdviser) {
 
 		Connection cnx = BDD.seConnecter();
@@ -44,6 +56,11 @@ public class DAOactors implements IDAOactors {
 		return null;
 	}
 
+	/**
+	 * @return listClient
+	 * 
+	 * retourne la liste des clients enregistrés en base de données
+	 */
 	public static Collection<Client> getAllClient() {
 		Connection cnx = BDD.seConnecter();
 

@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="C:/Users/adminl/Desktop/ProxiSamuel/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="C:/Users/adminl/Desktop/ProxiSamuel/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 <title>Liste clients</title>
 </head>
 <body>
@@ -30,12 +31,11 @@
 			<th class="col-md-1">Code Postal</th>
 
 			<th class="col-md-1">Ville</th>
-                                  
+
 			<th class="col-md-1">Téléphone</th>
-			<th class="col-md-4">Action</th>
 
 		</tr>
-		
+
 		<c:forEach items="${ClientList}" var="Client">
 			<tr class="row">
 				<td class="col-md-1">${Client.idClient}</td>
@@ -47,16 +47,36 @@
 				<td class="col-md-1">${Client.town}</td>
 				<td class="col-md-1">${Client.telNumber}</td>
 
-				<td class="col-md-2"><a href=""><input type="submit" value="Modifier"></a></td>
-				
-				<td class="col-md-2"><a href="AccountListServlet"><input type="submit" value="Comptes" name=""/></a></td>
-
-
 			</tr>
 
 
 		</c:forEach>
 	</table>
+
+	<form action="EditServlet" method="post" class="col-md-5">
+		<fieldset>
+			<legend>Modification client</legend>
+			<select name="Identifiant">
+				<c:forEach items="${ClientList }" var="Client">
+					<option>${Client.idClient}</option>
+				</c:forEach>
+			</select> <input type="submit" value="Modifier" />
+		</fieldset>
+
+	</form>
+
+
+	<form action="AccountListServlet" method="post" class="col-md-5">
+		<fieldset>
+			<legend>Comptes client</legend>
+			<select name="Identifiant">
+				<c:forEach items="${ClientList}" var="Client">
+					<option>${Client.idClient}</option>
+				</c:forEach>
+			</select> <input type="submit" value="Comptes" />
+		</fieldset>
+
+	</form>
 
 </body>
 </html>

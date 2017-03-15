@@ -13,13 +13,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import metier.AccountCurrent;
+import metier.AccountSaving;
 import metier.Client;
+import service.ServiceAccount;
 import service.ServiceActor;
 
 /**
  * Servlet implementation class AccountServlet
  */
-@WebServlet("/AccountServlet")
+@WebServlet("/AccountListServlet")
 public class AccountListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -28,7 +31,6 @@ public class AccountListServlet extends HttpServlet {
 	 */
 	public AccountListServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -37,31 +39,23 @@ public class AccountListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at:
-		// ").append(request.getContextPath());
+
+		String id = request.getParameter("Identifiant");
+		long Id = Long.valueOf(id);
+		AccountCurrent ca = ServiceAccount.getCurrentAccountById(Id);
+		AccountSaving sa = ServiceAccount.getSavingAccountById(Id);
+
+		HttpSession session = request.getSession(false);
 
 		
-		HttpSession session = request.getSession(false);
-		session.getP
-		
-		// Client cl = ServiceAccount.getAllClient();
-		
-		AccountCurrent ca = ServiceAccount.getCurrentAccountByIdClient();
-		AccountSaving sa = ServiceAccount.getSavingAccountBYIdClient();
-		
-		HttpSession session = request.getSession(false);
-		
-		session.getAttribute("ClientList", clientList);
 		session.setAttribute("ca", ca);
 		session.setAttribute("sa", sa);
 		
-		
 	
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/results/clientAccountList.jsp");
 		dispatcher.forward(request, response);
-		
+
 	}
 
 	/**
@@ -70,7 +64,6 @@ public class AccountListServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

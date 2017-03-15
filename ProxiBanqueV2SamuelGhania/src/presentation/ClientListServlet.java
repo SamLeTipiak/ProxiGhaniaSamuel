@@ -3,8 +3,6 @@ package presentation;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,7 +26,6 @@ public class ClientListServlet extends HttpServlet {
 	 */
 	public ClientListServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -38,9 +35,6 @@ public class ClientListServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at:
-		// ").append(request.getContextPath());
 
 		Collection<Client> clientList = new ArrayList<>();
 		clientList = ServiceActor.getAllClient();
@@ -58,7 +52,6 @@ public class ClientListServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

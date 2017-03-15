@@ -10,7 +10,7 @@ import java.util.List;
  *          <b>Client est la classe représentant les clients de la banque, elle
  *          étend la classe Actor et hérite donc de ses propriétés et méthodes.</b>
  *
- * @see Actor
+ *@see Actor
  *
  *      <div>Chaque client est représenté par les propriétés spécifiques suivantes :
  *      <ul>
@@ -75,26 +75,7 @@ public class Client extends Actor {
 		return listOfAccount;
 	}
 
-	// public void addBankAccount(BankAccount ba) {
-	// this.listOfAccount.add(ba);
-	// }
-
-	// public void AddBankCard(BankCard bc) {
-	// this.currentCard = bc;
-	// }
-	//
-	// public void removeBankAccount(BankAccount ba) {
-	// this.listOfAccount.remove(ba);
-	// }
-	//
-	// public boolean isClientIsRich() {
-	// return clientIsRich;
-	// }
-	//
-	// public BankCard getCurrentCard() {
-	// return currentCard;
-	// }
-
+	
 	public void setIdAdviser(long idAviser) {
 		this.idAdviser = idAviser;
 	}
@@ -127,20 +108,6 @@ public class Client extends Actor {
 		this.overdraftRate = overdraftRate;
 	}
 
-	// public BankAccount getAccount(BankAccount.etype type) {
-	//
-	// if (this.listOfAccount.size() > 0) {
-	//
-	// for (BankAccount bankAccount : this.listOfAccount) {
-	// if (bankAccount.getType().equals(type)) {
-	// //System.out.println("Client getAccount by type : "+type+" =
-	// "+bankAccount);
-	// return bankAccount;
-	// }
-	// }
-	// }
-	// return null;
-	// }
 
 	@Override
 	public String toString() {

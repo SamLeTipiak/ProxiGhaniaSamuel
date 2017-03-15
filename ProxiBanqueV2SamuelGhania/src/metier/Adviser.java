@@ -28,6 +28,7 @@ package metier;
  *
  */
 
+
 public class Adviser extends Actor {
 
 	private long idAdviser;
@@ -39,7 +40,6 @@ public class Adviser extends Actor {
 		super(idAgence, lastName, firstName);
 		this.idAdviser = idAviser;
 		this.pwdAdviser = pwdAdviser;
-		// ActorService.addAdviserToBDD(this);
 
 	}
 
@@ -54,32 +54,6 @@ public class Adviser extends Actor {
 		this.setPwdAdviser(pwdAdviser);
 	}
 
-	// public Adviser(String adAgence, String lastName, String firstName, long
-	// cellphone) {
-	// super(adAgence, lastName, firstName, cellphone);
-	// }
-	// public boolean addClient(Client cl)
-	// {
-	// if (this.listOfClient.size() < MAXCLIENT)
-	// {
-	// this.listOfClient.add(cl);
-	// return true;
-	// }
-	// else
-	// return false;
-	//
-	// }
-
-	// public boolean isAviableToNewClient()
-	// {
-	// if (this.listOfClient.size()<10)
-	// return true;
-	// else
-	// return false;
-	// }
-	// public List<Client> getListOfClient() {
-	// return listOfClient;
-	// }
 	public long getIdAdviser() {
 		return idAdviser;
 	}
